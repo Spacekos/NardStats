@@ -1,0 +1,100 @@
+#:kivy 2.3.0
+
+<ButtonKub@Button>:
+    font_size: 80
+
+<PlayerInfo@Label>:
+    font_size: 15
+    halign: 'left'
+    valign: 'top'
+    text_size: self.size
+    padding: 7
+
+<Container>:
+    orientation: 'vertical'
+    padding: 3
+
+    player1_info: player1_info
+    player2_info: player2_info
+    message_to_client: mass_to_cl
+    player1_name: player1_name
+    player2_name: player2_name
+
+    BoxLayout:
+        size_hint: 1, 0.05
+
+        Button:
+            size_hint: 0.2, 1
+            text: 'Отмена!'
+            on_release:
+                root.back()
+
+        Label:
+            id: mass_to_cl
+            text: 'Добро пожаловать в "NardStats"'
+
+    BoxLayout:
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            TextInput:
+                id: player1_name
+                font_size: 30
+                multiline: False
+                size_hint: 1, 0.1
+
+            PlayerInfo:
+                id: player1_info
+                text: ''
+
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            TextInput:
+                id: player2_name
+                font_size: 35
+                multiline: False
+                size_hint: 1, 0.1
+
+            PlayerInfo:
+                id: player2_info
+                text: ''
+
+    GridLayout:
+        size_hint: 1, 0.45
+        padding: 10
+        spacing: 7
+        rows: 2
+        cols: 3
+
+        ButtonKub:
+            text: '1'
+            on_release:
+                root.press1()
+
+        ButtonKub:
+            text: '2'
+            on_release:
+                root.press2()
+
+        ButtonKub:
+            text: '3'
+            on_release:
+                root.press3()
+
+        ButtonKub:
+            text: '4'
+            on_release:
+                root.press4()
+
+        ButtonKub:
+            text: '5'
+            on_release:
+                root.press5()
+
+        ButtonKub:
+            text: '6'
+            on_release:
+                root.press6()
